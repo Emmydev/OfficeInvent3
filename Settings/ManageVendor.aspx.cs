@@ -63,6 +63,11 @@ public partial class Settings_ManageVendor : System.Web.UI.Page
     {
         try
         {
+            if (Session["CompanyId"] == null)
+            {
+                Response.Redirect("~/login.aspx");
+            }
+            int companyId = int.Parse(Session["CompanyId"].ToString());
             var vendourList = _db.Vendours.Where(m => m.FullName.ToLower().Trim().Equals(txtFullName.Text.ToLower().Trim()));
 
             if (vendourList.Any())
@@ -80,7 +85,8 @@ public partial class Settings_ManageVendor : System.Web.UI.Page
                 AccountNumber = txtFullName.Text,
                 AccountName = txtAccountName.Text,
                 BankName = txtBankName.Text,
-                AccountType = int.Parse(ddlAccountType.SelectedValue)
+                AccountType = int.Parse(ddlAccountType.SelectedValue),
+                CompanyId = companyId
 
             };
             _db.Vendours.Add(vendourObj);
