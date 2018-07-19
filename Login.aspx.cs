@@ -24,6 +24,7 @@ public partial class Login : System.Web.UI.Page
             if (user != null)
             {
                 Session["LogedinuserId"] = user.Id;
+                Session["CompanyId"] = user.CompanyId;
                 IdentityHelper.SignIn(manager, user, RememberMe.Checked);
                Response.Redirect("Admin/Dashboard.aspx");
             }

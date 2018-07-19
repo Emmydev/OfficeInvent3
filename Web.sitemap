@@ -8,7 +8,7 @@
       <siteMapNode url="~/Admin/ManageStock.aspx#" title="Manage Stocks"  description="true" roles="Wholesaler" resourceKey="fa fa-money">
         <siteMapNode url="~/Admin/ManageStock.aspx" title="Create Stocks"   roles="Wholesaler" />
 
-        <siteMapNode url="~/Wholesaler/ViewProduct.aspx" title="View Stocks"   roles="Wholesaler" />
+        <siteMapNode url="~/Admin/ManageStockList.aspx" title="View Stocks"   roles="Wholesaler" />
 
 
       </siteMapNode>

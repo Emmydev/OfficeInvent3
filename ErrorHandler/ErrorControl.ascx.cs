@@ -179,7 +179,53 @@ public partial class ErrorHandler_ErrorControl : System.Web.UI.UserControl
         }
     }
 
+    public void EnableControls(Control parent)
+    {
+        if (parent == null)
+        {
+            return;
+        }
+        foreach (Control c in parent.Controls)
+        {
+            if (c.GetType() == typeof(HtmlInputText))
+            {
+                ((HtmlInputText)c).Disabled = false;
+            }
+            if (c.GetType() == typeof(TextBox))
+            {
+                ((TextBox)c).Enabled = true;
+            }
+            else if (c.GetType() == typeof(DropDownList))
+            {
 
+                ((DropDownList)c).Enabled = true;
+
+            }
+            else if (c.GetType() == typeof(ListBox))
+            {
+                ((ListBox)c).Enabled = true;
+
+
+            }
+            else if (c.GetType() == typeof(FileUpload))
+            {
+                ((FileUpload)c).Enabled = true;
+
+
+            }
+            else if (c.GetType() == typeof(CheckBox))
+            {
+                ((CheckBox)c).Enabled = true;
+            }
+            else
+            {
+                if (c.HasControls())
+                {
+                    EnableControls(c);
+                }
+            }
+        }
+    }
     public void HideShowControl(Control conrolToHide, Control controlToShow)
     {
         conrolToHide.Visible = false;

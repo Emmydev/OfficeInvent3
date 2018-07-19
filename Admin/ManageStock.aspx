@@ -34,10 +34,10 @@
                                             <div class="form-group" runat="server" >
                                    
                                     <div class="col-sm-10 text-center">
-                                           <h2><strong>
+                                          <%-- <h2><strong>
                                                <asp:Label  runat="server" Text="Add New Stocks"></asp:Label>
                                         </strong>
-                                        </h2>
+                                        </h2>--%>
                                            <uc1:ErrorControl ID="ErrorControl1" runat="server" />
                                     </div>
                                     </div> 
@@ -56,6 +56,14 @@
                                 <asp:DropDownList runat="server" ID="ddlCategory" CssClass="form-control" ></asp:DropDownList>
                                           </div>
                             </div>
+                                 <div class="form-group">
+                                 <label for="txtBarcode" class="col-sm-3 control-label">Barcode </label>
+                                  <div class="col-sm-5">
+                                  <asp:TextBox ID="txtBarcode" CssClass="form-control "  runat="server">
+                                   </asp:TextBox>
+                                
+                                   </div>
+                                 </div>
                                    <div class="form-group">
                                  <label for="txtDescription" class="col-sm-3 control-label">Description </label>
                                   <div class="col-sm-5">
@@ -64,6 +72,7 @@
                                 
                                    </div>
                                  </div>
+                                       
                           
                             <div class="form-group">
                                 <label runat="server" class="col-sm-3 control-label"  id="lblBank" >Vendor</label>
@@ -101,7 +110,7 @@
                            
                           
                                 <asp:Button ID="BtnCancel" CssClass=" btn btn-sm btn-danger" runat="server" Text="Cancel" />
-                                 <asp:Button ID="BtnSave" CommandName="Save" CssClass="btn btn-sm btn-success" runat="server"  Text="Add Stock"   CommandArgument="1"/>
+                                 <asp:Button ID="BtnSave" CommandName="Save" CssClass="btn btn-sm btn-success" runat="server"  Text="Update Stock" OnClick="BtnSave_Click"   CommandArgument="1"/>
                             </div>
                         </div>         
                                 
