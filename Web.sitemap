@@ -40,6 +40,7 @@
       <siteMapNode url="~/Retailer/Updateinfo.aspx#" title="Settings"  description="true" roles="Retailer" resourceKey="fa fa-cog">
         <siteMapNode url="~/Retailer/Updateinfo.aspx" title="Update Profile"   roles="Retailer" />
         <siteMapNode url="~/Settings/ManageCategory.aspx" title="Manage Category"   roles="Retailer" />
+        <siteMapNode url="~/Settings/ManageVendor.aspx" title="Manage Vendor"   roles="Retailer" />
       </siteMapNode>
     </siteMapNode>
   </siteMapNode>

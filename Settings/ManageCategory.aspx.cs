@@ -50,7 +50,7 @@ public partial class Settings_ManageCategory : System.Web.UI.Page
         if (categoryObj != null)
         {
             txtName.Text = categoryObj.Name;
-           
+   
         }
         divList.Visible = false;
         divForm.Visible = true;
