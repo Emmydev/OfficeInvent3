@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.master" AutoEventWireup="true" CodeFile="ManageVendor.aspx.cs" Inherits="Settings_ManageVendor" %>
+﻿<%@ Page Title="Manage Vendour" Language="C#" MasterPageFile="~/Admin.master" AutoEventWireup="true" CodeFile="ManageVendor.aspx.cs" Inherits="Settings_ManageVendor" %>
 
 <%@ Register src="../ErrorHandler/ErrorControl.ascx" tagname="ErrorControl" tagprefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headContentPlaceHolder" Runat="Server">
@@ -45,7 +45,9 @@
                                                      </asp:TemplateField>
                                                       
                                                       <asp:BoundField DataField="FullName" HeaderText=" Full Name" />
-                                                       
+                                                       <asp:BoundField DataField="CompanyName" HeaderText="Company Name" />
+                                                      <asp:BoundField DataField="Address" HeaderText=" Address" />
+                                                      <asp:BoundField DataField="Phone" HeaderText="Phone" />
                                                     
                                                         <asp:TemplateField HeaderText="Action" >
                                                         <ItemStyle CssClass="text-center"  />
@@ -89,59 +91,114 @@
                                     </div> 
 
                                
-                                
-                           
+                  <%--              <div id="errormessage"></div>
+                <form action="" method="post" role="form" class="contactForm">
+
+
+    <div class="col-lg-12 col-offset-6 col-centered">
+  <uc1:ErrorControl ID="ErrorControl3" runat="server" />
+   
+        <div class="col-lg-6">--%>
+
+<div class="box-content">
+                               <div class="row">
+                                  
+                                         
+                                          
+                 <div class="col-sm-12" runat="server"  id="divForm">
+                   <div class="col-md-12">
+                                       
+                                        <div class="form-horizontal" role="form" runat="server" id="Div2" >
+                     
+                                            <div class="form-group" runat="server" >
+
+                  <div class="col-sm-10 text-center">
+                                          <%-- <h2><strong>
+                                               <asp:Label  runat="server" Text="Add New Stocks"></asp:Label>
+                                        </strong>
+                                        </h2>--%>
+                                           <uc1:ErrorControl ID="ErrorControl3" runat="server" />
+                                    </div>
+                                    </div>
+
                        <div class="form-group">
-                           <label runat="server">Full Name</label>
-                                 <asp:TextBox ID="txtFullName" CssClass="form-control "  runat="server">
+                           <label runat="server" class="col-sm-3 control-label">Full Name*</label>
+                           <div class="col-sm-5">
+                           <asp:TextBox ID="txtFullName" CssClass="form-control "  runat="server">
                                    </asp:TextBox>
-                           </div>
-                        <div class="form-group">
-                            <label runat="server">Company</label>
-                            <asp:DropDownList ID="ddlCompany" runat="server" CssClass="form-control"  > 
-                            </asp:DropDownList>
+                        </div>
+                       </div>
+                       <div class="form-group">
+                            <label runat="server" class="col-sm-3 control-label">Company*</label>
+                           <div class="col-sm-5">
+                           <asp:TextBox ID="txtCompany" CssClass="form-control "  runat="server">
+                                   </asp:TextBox>
+                        </div>
                         </div>
                         <div class="form-group">
-                            <label runat="server">Address</label>
+                            <label runat="server" class="col-sm-3 control-label">Address*</label>
+                            <div class="col-sm-5">
                             <asp:TextBox ID="txtAddress" CssClass="form-control "  runat="server">
                                    </asp:TextBox>
                         </div>
-                         <div class="form-group">
-                            <label runat="server">Phone</label>
-                             <asp:TextBox ID="txtPhone" CssClass="form-control "  runat="server">
-                                   </asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <label runat="server">Website</label>
-                              <asp:TextBox ID="txtWebsite" CssClass="form-control "  runat="server">
+                            <label runat="server" class="col-sm-3 control-label">Phone*</label>
+                            <div class="col-sm-5">
+                            <asp:TextBox ID="txtPhone" CssClass="form-control "  runat="server">
+                                   </asp:TextBox>
+                         </div>   
+                        </div>
+                        <div class="form-group">
+                             <label runat="server" class="col-sm-3 control-label">Email*</label>
+                            <div class="col-sm-5"> 
+                            <asp:TextBox ID="txtEmail" CssClass="form-control "  runat="server">
+                                   </asp:TextBox>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Invalid email address" CssClass="text-danger" ControlToValidate="txtEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                        </div>
+                        </div>
+                        <div class="form-group">
+                            <label runat="server" class="col-sm-3 control-label">Website</label>
+                            <div class="col-sm-5">  
+                            <asp:TextBox ID="txtWebsite" CssClass="form-control "  runat="server">
                                    </asp:TextBox>
                         </div>
-                          <div class="form-group">
-                            <label runat="server">Account Number</label>
-                                <asp:TextBox ID="txtAccountNo" CssClass="form-control "  runat="server">
+                        </div>
+                        <div class="form-group">
+                            <label runat="server" class="col-sm-3 control-label">Account Number</label>
+                            <div class="col-sm-5">    
+                            <asp:TextBox ID="txtAccountNo" CssClass="form-control "  runat="server">
                                    </asp:TextBox>
                           </div>
-                            <div class="form-group">
-                                <label runat="server">Account Name</label>
-                                <asp:TextBox ID="txtAccountName" CssClass="form-control "  runat="server">
+                          </div>
+                        <div class="form-group">
+                                <label runat="server" class="col-sm-3 control-label">Account Name</label>
+                            <div class="col-sm-5">    
+                            <asp:TextBox ID="txtAccountName" CssClass="form-control "  runat="server">
                                    </asp:TextBox>
                             </div>
-                            <div class="form-group">
-                                <label runat="server">Bank Name</label>
-                                <asp:TextBox ID="txtBankName" CssClass="form-control "  runat="server">
+                            </div>
+                        <div class="form-group">
+                                <label runat="server" class="col-sm-3 control-label">Bank Name</label>
+                            <div class="col-sm-5">    
+                            <asp:TextBox ID="txtBankName" CssClass="form-control "  runat="server">
                                    </asp:TextBox>
                             </div>
-                            <div class="form-group">
-                            <label runat="server">Account Type</label>
-                                <asp:DropDownList ID="ddlAccountType" runat="server" CssClass="form-control"  >
+                            </div>
+                        <div class="form-group">
+                            <label runat="server" class="col-sm-3 control-label">Account Type</label>
+                            <div class="col-sm-5">    
+                            <asp:DropDownList ID="ddlAccountType" runat="server" CssClass="form-control"  >
                                     <asp:ListItem Value="1">Savings</asp:ListItem>
                                     <asp:ListItem Value="2">Current</asp:ListItem>     
                                 </asp:DropDownList>
-                            </div>    
+                            </div>
+                            </div> 
                         </div>    
-                        </div>       
-                             <div class="form-group">
-                            <div class="col-sm-8 text-right">
+                        </div>
+                     <div class="col-sm-10 text-center">       
+                        <div class="form-group">
+                            <%--<div class="col-sm-8 text-right">--%>
                           <asp:Button ID="btnBack" CommandName="Save" CssClass="btn btn-sm btn-success" runat="server"  Text="<<Back" OnClick="btnBack_Click" CommandArgument="1"/>
                            
                           
@@ -157,12 +214,9 @@
                 </div>
                                    </div>
                     </div>
-                      </div>
+                    
             </div>
 
-    </div>
-    </div>
-    </div>
     </div>
     </div>
     </div>
