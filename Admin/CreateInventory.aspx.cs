@@ -77,26 +77,18 @@ public partial class Admin_CreateInventory : System.Web.UI.Page
             }
             var inventObj = new Inventory
             {
-                //    Name = txtName.Value,
-                //    CategoryId = int.Parse(ddlCategory.SelectedValue),
-                //    CompanyId = companyId,
-                //    DateCreated = DateTime.Now,
-                //    Description = txtDescription.Text,
-                //    Code = txtBarcode.Text,
+                StockId = stockId,
+                CostPrice=decimal.Parse(txtCostPrice.Text),
+                CompanyId = companyId,
+                DateCreated = DateTime.Now,
+                 ReorderLevel=int.Parse(txtReoderLevel.Text)
 
 
-                //};
-                //if (int.Parse(ddlVendor.SelectedValue) > 0)
-                //{
-                //    stockObj.VendourId = int.Parse(ddlVendor.SelectedValue);
-                //}
-                //if (filImage.HasFile)
-                //{
-                //    stockObj.FilePath = UploadPicture();
             };
-            //_db.Stocks.Add(stockObj);
+            
+            _db.Inventories.Add(inventObj);
             _db.SaveChanges();
-            ErrorControl1.ShowSuccess("Stock saved successfully");
+            ErrorControl1.ShowSuccess("Inventory saved successfully");
             ErrorControl1.ClearControls(divForm);
 
         }
