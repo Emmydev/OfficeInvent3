@@ -41,17 +41,29 @@ public partial class Admin_CreateInventory : System.Web.UI.Page
 
     private bool ValidateControl()
     {
-        if (int.Parse(ddlStock.SelectedValue) < 0)
+        if (int.Parse(ddlStock.SelectedValue) < 1)
         {
             ErrorControl1.ShowError("Please select stock");
             return false;
         }
+        else if (string.IsNullOrEmpty(txtCostPrice.Text))
+        {
+            ErrorControl1.ShowError("Cost Price field is required");
+            return false;
+        }
+
         else if (string.IsNullOrEmpty(txtQuantity.Text))
         {
             ErrorControl1.ShowError("Quantity field is required");
             return false;
         }
-        
+        else if (string.IsNullOrEmpty(txtReoderLevel.Text))
+        {
+            ErrorControl1.ShowError("Reorder Level field is required");
+            return false;
+        }
+
+
 
         return true;
 
@@ -68,24 +80,35 @@ public partial class Admin_CreateInventory : System.Web.UI.Page
             int companyId = int.Parse(Session["CompanyId"].ToString());
             int stockId = int.Parse(ddlStock.SelectedValue);
             var inventories = _db.Inventories.Where(m => m.StockId == stockId);
-            
+
 
             if (inventories.Any())
             {
                 ErrorControl1.ShowError("Stock with the same name already exist");
                 return;
             }
+
+
             var inventObj = new Inventory
             {
+
+
                 StockId = stockId,
-                CostPrice=decimal.Parse(txtCostPrice.Text),
+                CostPrice = decimal.Parse(txtCostPrice.Text),
                 CompanyId = companyId,
+                Quantity = int.Parse(txtQuantity.Text),
                 DateCreated = DateTime.Now,
-                 ReorderLevel=int.Parse(txtReoderLevel.Text)
+                ReorderLevel = int.Parse(txtReoderLevel.Text),
+        };
+            if (chkRequired.Checked)
+            {
+                inventObj.Permision = true;
+            }
+            else
+            {
+                inventObj.Permision = false;
+            }
 
-
-            };
-            
             _db.Inventories.Add(inventObj);
             _db.SaveChanges();
             ErrorControl1.ShowSuccess("Inventory saved successfully");
@@ -106,5 +129,9 @@ public partial class Admin_CreateInventory : System.Web.UI.Page
             return;
         }
         SaveInventory();
+    }
+    protected void BtnCancel_Click(object sender, EventArgs e)
+    {
+        ErrorControl1.ClearControls(divForm);
     }
 }

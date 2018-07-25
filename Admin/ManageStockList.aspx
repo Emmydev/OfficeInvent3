@@ -52,7 +52,7 @@
                                                         <ItemStyle CssClass="text-left" />
                                                         <ItemTemplate>
                                                          <%# DataBinder.Eval(Container.DataItem,"Vendour.CompanyName")%>
-                                                       
+                                                         
                                                         </ItemTemplate>
                                                        </asp:TemplateField>
 
@@ -77,11 +77,11 @@
                                                                         <asp:LinkButton ID="btnEdit" CommandArgument='<%#Eval("StockId") %>'  ClientIDMode="Static" CausesValidation="False"   OnClick="btnEdit_Click" CssClass="btn btn-xs btn-primary" runat="server"><i class="fa fa-edit"></i>Edit</asp:LinkButton> 
                                                                     </td>
                                                                       <td>
-                                                                        <asp:LinkButton ID="btnView" CommandArgument='<%#Eval("StockId") %>'  ClientIDMode="Static" CausesValidation="False" OnClick="btnView_Click" CssClass="btn btn-xs btn-info" runat="server"><i class="fa fa-edit"></i>Edit</asp:LinkButton> 
+                                                                        <asp:LinkButton ID="btnView" CommandArgument='<%#Eval("StockId") %>'  ClientIDMode="Static" CausesValidation="False" OnClick="btnView_Click" CssClass="btn btn-xs btn-info" runat="server"><i class="fa fa-edit"></i>View</asp:LinkButton> 
                                                                     </td>
                                                                     <td>
                                                             
-                                                              <asp:LinkButton ID="btnDelete"  OnClick="btnDelete_Click" CommandArgument='<%#Eval("StockId") %>'   OnClientClick="javascript:return confirm('Are you sure you want to delete this student from the list?');" AlternateText="Delete Student" CssClass="btn btn-xs btn-danger" runat="server"><i class="fa fa-trash-o"></i> Delete</asp:LinkButton> 
+                                                              <asp:LinkButton ID="btnDelete"  OnClick="btnDelete_Click" CommandArgument='<%#Eval("StockId") %>'   OnClientClick="javascript:return confirm('Are you sure you want to delete this Stock from the list?');" AlternateText="Delete Student" CssClass="btn btn-xs btn-danger" runat="server"><i class="fa fa-trash-o"></i> Delete</asp:LinkButton> 
                           
                                                               </td>
                                                                 </tr>

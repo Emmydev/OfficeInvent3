@@ -81,15 +81,16 @@ public partial class Admin_ManageStockList : System.Web.UI.Page
         ErrorControl1.EnableControls(divForm);
         BtnSave.CommandArgument = "2";
        // lblInstitution.Text = "Update Stock";
-      //  BtnSave.Text = "Update Stock";
+        BtnSave.Text = "Update Stock";
         var stockId = int.Parse(viewLinkBtn.CommandArgument);
         ViewState["StockId"] = stockId;
         var stockObj = _db.Stocks.FirstOrDefault(m => m.StockID == stockId);
+        
         if (stockObj != null)
         {
-            txtName.Value = stockObj.Name;
-            txtBarcode.Text = stockObj.Code;
-            txtDescription.Text = stockObj.Description;
+            txtName.Value = stockObj.Name.Trim();
+            txtBarcode.Text = stockObj.Code.Trim();
+            txtDescription.Text = stockObj.Description.Trim();
             ddlCategory.SelectedValue = stockObj.CategoryId.ToString();
             ddlVendor.SelectedValue = stockObj.VendourId.ToString();
             //string savePath = Server.MapPath("~/StockImages/");
@@ -166,14 +167,15 @@ public partial class Admin_ManageStockList : System.Web.UI.Page
             }
             var stockId = int.Parse(ViewState["StockId"].ToString());
             var stockObj = _db.Stocks.FirstOrDefault(m => m.StockID == stockId);
+            var stockList = _db.Stocks.Where(m => m.Name.ToLower().Trim().Equals(txtName.Value.ToLower().Trim()) && m.StockID == stockId);
             stockObj.Name = txtName.Value;
             if (int.Parse(ddlVendor.SelectedValue) > 0)
             {
                 stockObj.VendourId = int.Parse(ddlVendor.SelectedValue);
             }
-            stockObj.VendourId = int.Parse(ddlVendor.SelectedValue);
-            stockObj.Description = txtDescription.Text;
-            stockObj.Code = txtBarcode.Text;
+            stockObj.CategoryId = int.Parse(ddlCategory.SelectedValue);
+            stockObj.Description = txtDescription.Text.Trim();
+            stockObj.Code = txtBarcode.Text.Trim();
             stockObj.FilePath = UploadPicture();
           
             _db.SaveChanges();

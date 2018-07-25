@@ -154,4 +154,9 @@ public partial class Admin_ManageStock : System.Web.UI.Page
         }
         SaveStock();
     }
+
+    protected void BtnCancel_Click(object sender, EventArgs e)
+    {
+        ErrorControl1.ClearControls(divForm);
+    }
 }

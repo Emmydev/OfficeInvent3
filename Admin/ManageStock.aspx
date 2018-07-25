@@ -109,7 +109,7 @@
                           <%--<asp:Button ID="btnBack" CommandName="Save" CssClass="btn btn-sm btn-success" runat="server"  Text="<<Back"  CommandArgument="1"/>--%>
                            
                           
-                                <asp:Button ID="BtnCancel" CssClass=" btn btn-sm btn-danger" runat="server" Text="Cancel" />
+                                <asp:Button ID="BtnCancel" CssClass=" btn btn-sm btn-danger" runat="server" Text="Cancel" OnClick="BtnCancel_Click" />
                                  <asp:Button ID="BtnSave" CommandName="Save" CssClass="btn btn-sm btn-success" runat="server"  Text="Update Stock" OnClick="BtnSave_Click"   CommandArgument="1"/>
                             </div>
                         </div>         

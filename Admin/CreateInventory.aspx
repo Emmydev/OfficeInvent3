@@ -43,7 +43,17 @@
                                   <div class="col-sm-5">
                                 <asp:DropDownList runat="server" ID="ddlStock" CssClass="form-control" ></asp:DropDownList>
                                  </div>
-                            </div>  
+                            </div>
+                                            
+                            <div class="form-group">
+                                 <label for="txtCostPrice" class="col-sm-3 control-label">Cost Price </label>
+                               <div class="col-sm-5">
+                                  <asp:TextBox ID="txtCostPrice" CssClass="form-control "  runat="server">
+                                   </asp:TextBox>
+                                
+                               </div>
+                            </div>
+                       
                             <div class="form-group">
                                 <label for="txtQuantity" runat="server" id="Label1" class="col-sm-3 control-label" >Quantity *</label>
                                       <div class="col-sm-5">
@@ -51,23 +61,19 @@
                                    </asp:TextBox>
                                 </div>
                             </div>
-                                 <div class="form-group">
-                                 <label for="txtCostPrice" class="col-sm-3 control-label">Cost Price </label>
-                                  <div class="col-sm-5">
-                                  <asp:TextBox ID="txtCostPrice" CssClass="form-control "  runat="server">
-                                   </asp:TextBox>
-                                
-                                   </div>
-                                 </div>
-                                   
-                                       
-                          
+                              
                             <div class="form-group">
                                  <label for="txtReoderLevel" class="col-sm-3 control-label">Reorder Level </label>
                                   <div class="col-sm-5">
                                   <asp:TextBox ID="txtReoderLevel" CssClass="form-control "  runat="server">
                                    </asp:TextBox>
                                 
+                                   </div>
+                                 </div>
+                                            <div class="form-group">
+                                 <label for="txtRequired" class="col-sm-3 control-label">Require Permission? </label>
+                                  <div class="col-sm-5">
+                                <asp:CheckBox ID="chkRequired" runat="server" />
                                    </div>
                                  </div>
                                    
@@ -77,8 +83,8 @@
                         
                            
                           
-                                <asp:Button ID="BtnCancel" CssClass=" btn btn-sm btn-danger" runat="server" Text="Cancel" />
-                                 <asp:Button ID="BtnSave" CommandName="Save" CssClass="btn btn-sm btn-success" runat="server"  Text="Update Stock" OnClick="BtnSave_Click"   CommandArgument="1"/>
+                                <asp:Button ID="BtnCancel" CssClass=" btn btn-sm btn-danger" runat="server" Text="Cancel" OnClick="BtnCancel_Click" />
+                                 <asp:Button ID="BtnSave" CommandName="Save" CssClass="btn btn-sm btn-success" runat="server"  Text="Create Inventory" OnClick="BtnSave_Click"   CommandArgument="1"/>
                             </div>
                         </div>         
                                 
