@@ -228,7 +228,7 @@
                             <div class="col-xs-9 text-right">
                                 <div class="huge" id="lblPermision" runat="server" style="color: red"><b>Step </b></div>
                                 <div>
-                                    Items waiting for permission
+                                   Waiting Permission
                                 </div>
                             </div>
                         </div>

@@ -13,21 +13,21 @@
 
       </siteMapNode>
       
-      <siteMapNode url="~/Admin/ManageInventory.aspx#" title="Manage Inventory"  description="true" roles="Wholesaler" resourceKey="fa fa-money">
-        <siteMapNode url="~/Admin/CreateInventory.aspx" title="Create Inventory"   roles="Wholesaler" />
+      <siteMapNode url="~/Wholesaler/PostProddffsuct.aspx#" title="Manage Inventory"  description="true" roles="Wholesaler" resourceKey="fa fa-money">
+        <siteMapNode url="~/Wholesaler/dfds.aspx" title="Create Inventory"   roles="Wholesaler" />
 
-        <siteMapNode url="~/Admin/ViewInventory.aspx" title="View Inventory"   roles="Wholesaler" />
+        <siteMapNode url="~/Wholesaler/ViewdsffProduct.aspx" title="View Inventory"   roles="Wholesaler" />
 
 
       </siteMapNode>
-      <siteMapNode url="~/Admin/ManageStaff.aspx#"  title="Manage Staffs"  description="true" roles="Wholesaler" resourceKey="fa fa-shopping-cart">
-        <siteMapNode url="~/Admin/CreateStaff.aspx" title="Create Staff"  roles="Wholesaler" />
-        <siteMapNode url="~/Wholesaler/SalesHistory.aspx" title="View Staffs"  roles="Wholesaler" />
+      <siteMapNode url="~/UserManagement/CreateUser.aspx#"  title="Manage Staffs"  description="true" roles="Wholesaler" resourceKey="fa fa-shopping-cart">
+        <siteMapNode url="~/UserManagement/CreateUser.aspx" title="Create Staff"  roles="Wholesaler" />
+        <siteMapNode url="~/UserManagement/ManageUsers.aspx" title="View Staffs"  roles="Wholesaler" />
        </siteMapNode>
 
-      <siteMapNode url="~/Admin/Reporting.aspx#" title="Reporting" description="true" roles="Wholesaler" resourceKey="fa fa-gift">
-        <siteMapNode  url="~/Admin/StockHistory.aspx" title="Stock History"  description="false" roles="Wholesaler"/>
-        
+      <siteMapNode url="~/Wholesaler/ManageDeals.aspx#" title="Reporting" description="true" roles="Wholesaler" resourceKey="fa fa-gift">
+        <siteMapNode  url="~/Wholesaler/ManageDeals.aspx" title="Stock History"  description="false" roles="Wholesaler"/>
+        <siteMapNode  url="~/Wholesaler/DealsTransactions.aspx" title="Login History"  description="false" roles="Wholesaler"/>
        
         
       </siteMapNode>
@@ -40,7 +40,6 @@
       <siteMapNode url="~/Retailer/Updateinfo.aspx#" title="Settings"  description="true" roles="Retailer" resourceKey="fa fa-cog">
         <siteMapNode url="~/Retailer/Updateinfo.aspx" title="Update Profile"   roles="Retailer" />
         <siteMapNode url="~/Settings/ManageCategory.aspx" title="Manage Category"   roles="Retailer" />
-        <siteMapNode url="~/Settings/ManageVendor.aspx" title="Manage Vendor"   roles="Retailer" />
       </siteMapNode>
     </siteMapNode>
   </siteMapNode>

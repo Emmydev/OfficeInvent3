@@ -90,7 +90,7 @@ public partial class Account_Register : Page
         if (companyId > 0)
         {
             var manager = new UserManager();
-            var user = new ApplicationUser() { UserName = txtEmail.Text, CompanyId = companyId, FullName = txtFullName.Text, PhoneNumber = txtPhone.Value };
+            var user = new ApplicationUser() { UserName = txtEmail.Text,Email=txtEmail.Text, CompanyId = companyId, FullName = txtFullName.Text, PhoneNumber = txtPhone.Value };
             IdentityResult result = await manager.CreateAsync(user, txtPassword.Text);
             if (result.Succeeded)
             {
