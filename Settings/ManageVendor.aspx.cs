@@ -56,13 +56,13 @@ public partial class Settings_ManageVendor : System.Web.UI.Page
     {
         try
         {
-
-            var institutionList = _db.Vendours.ToList();
+            
+             var institutionList = _db.Vendours.ToList();
             if (!institutionList.Any())
             {
-                grdInstitution.DataSource = new List<Vendour>();
-                grdInstitution.DataBind();
-                return;
+            grdInstitution.DataSource = new List<Vendour>();
+            grdInstitution.DataBind();
+            return;
             }
             grdInstitution.DataSource = institutionList;
             grdInstitution.DataBind();

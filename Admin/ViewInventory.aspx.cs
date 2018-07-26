@@ -64,22 +64,12 @@ public partial class Admin_ViewInventory : System.Web.UI.Page
     {
         try
         {
-            //if (Session["CompanyId"] == null)
-            //{
-            //    Response.Redirect("~/Login.aspx");
-            //}
-            //int companyId = int.Parse(Session["CompanyId"].ToString());
-            //var inventoryList = _db.Inventories.Where(m => m.CompanyId == companyId).ToList();
-            //if (!inventoryList.Any())
-            //{
-            //    grdInventory.DataSource = new List<Category>();
-            //    grdInventory.DataBind();
-            //    return;
-            //}
-            //grdInventory.DataSource = inventoryList;
-            //grdInventory.DataBind();
-
-            var inventoryList = _db.Inventories.ToList();
+            if (Session["CompanyId"] == null)
+            {
+                Response.Redirect("~/Login.aspx");
+            }
+            int companyId = int.Parse(Session["CompanyId"].ToString());
+            var inventoryList = _db.Inventories.Where(m => m.CompanyId == companyId).ToList();
             if (!inventoryList.Any())
             {
                 grdInventory.DataSource = new List<Inventory>();
@@ -88,6 +78,16 @@ public partial class Admin_ViewInventory : System.Web.UI.Page
             }
             grdInventory.DataSource = inventoryList;
             grdInventory.DataBind();
+
+            //var inventoryList = _db.Inventories.ToList();
+            //if (!inventoryList.Any())
+            //{
+            //    grdInventory.DataSource = new List<Inventory>();
+            //    grdInventory.DataBind();
+            //    return;
+            //}
+            //grdInventory.DataSource = inventoryList;
+            //grdInventory.DataBind();
         }
         catch (Exception ex)
         {
@@ -107,7 +107,8 @@ public partial class Admin_ViewInventory : System.Web.UI.Page
             var inventoryObj = _db.Inventories.FirstOrDefault(m => m.InventoryId == inventoryId);
             if (int.Parse(ddlStock.SelectedValue) > 0)
             {
-                inventoryObj.StockId = int.Parse(ddlStock.SelectedValue);
+                inventoryObj.StockId = (int.Parse(ddlStock.SelectedValue));
+                
             }
             inventoryObj.CostPrice = decimal.Parse(txtCostPrice.Text);
             inventoryObj.ReorderLevel = int.Parse(txtReoderLevel.Text);
