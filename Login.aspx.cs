@@ -16,23 +16,31 @@ public partial class Login : System.Web.UI.Page
 
     protected void LogIn(object sender, EventArgs e)
     {
-        if (IsValid)
+        try
         {
-            // Validate the user password
-            var manager = new UserManager();
-            ApplicationUser user = manager.Find(Email.Text, Password.Text);
-            if (user != null)
+            if (IsValid)
             {
-                Session["LogedinuserId"] = user.Id;
-                Session["CompanyId"] = user.CompanyId;
-                IdentityHelper.SignIn(manager, user, RememberMe.Checked);
-               Response.Redirect("Admin/Dashboard.aspx");
+                // Validate the user password
+                var manager = new UserManager();
+                ApplicationUser user = manager.Find(Email.Text, Password.Text);
+                if (user != null)
+                {
+                    Session["LogedinuserId"] = user.Id;
+                    Session["CompanyId"] = user.CompanyId;
+                    IdentityHelper.SignIn(manager, user, RememberMe.Checked);
+                    Response.Redirect("Admin/Dashboard.aspx");
+                }
+                else
+                {
+                    FailureText.Text = "Invalid username or password.";
+                    ErrorMessage.Visible = true;
+                }
             }
-            else
-            {
-                FailureText.Text = "Invalid username or password.";
-                ErrorMessage.Visible = true;
-            }
+        }
+        catch(Exception ex)
+        {
+            FailureText.Text = ex.Message;
+            ErrorMessage.Visible = true;
         }
     }
 }

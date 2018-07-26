@@ -101,6 +101,7 @@ box-shadow: 1px 2px 10px #ebecec;
     <form id="mainform" runat="server">
           <%-- <asp:ScriptManager runat="server"></asp:ScriptManager>--%>
         <!-- start: Header -->
+
         <header class="navbar">
             <div class="container">
 
@@ -121,11 +122,19 @@ box-shadow: 1px 2px 10px #ebecec;
                         
                     </ul>
 
-                    <ul class="nav navbar-nav pull-right">
+                    
+                    <ul class="nav navbar-nav pull-right" style="margin-top:8px;">
+                          <li class="hidden-xs pull-left" style="margin-right:40px; margin-top:8px">
+                             <i class="fa fa-bell fa-fw" style="color:#808080"></i><i class="fa fa-caret-down"></i>
+                            </li>
 
+                         <li class="dropdown hidden-xs">
+                              <img src="../assets/img/default.gif" class="img-avatar"  /> 
+                            </li>
                         <!-- start: User Dropdown -->
                         <li class="dropdown hidden-xs">
-                            <asp:Label ID="UsernameLabel" CssClass="label user-label" style=" text-transform:uppercase;" runat="server"> </asp:Label>
+
+                            <asp:Label ID="UsernameLabel" CssClass="label user-label" style="color:#5FCF80" runat="server"><%: Context.User.Identity.GetUserName()  %>  </asp:Label>
                         </li>
                         <li class="">
                             <span id="logout" class="btn btn-sm btn-success btn-logout"><i class="fa fa-sign-out"></i>&nbsp; <b>Logout</b></span>

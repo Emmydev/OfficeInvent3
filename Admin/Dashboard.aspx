@@ -136,8 +136,65 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="mainContentPlaceHolder" runat="server">
     
   <div class="row" >
-        <div class="col-md-12">
-            <div class="col-lg-3 col-md-6 col-xs-12">
+       <div class="col-md-12">
+         <div class="col-md-4">
+            <div class="panel panel-success">
+                <div class="panel-heading" style="text-align: right; padding:5px 15px;">
+                    Select a range: &nbsp;
+            <select id="range4" onchange="GetICategogry(this.value)" style="border: 1px solid #aaa; margin: 2px 3px 0 0; -webkit-border-radius: 2px; cursor: pointer; width: 100px;" class="tftype2">
+                <option value="month">This Month</option>
+                <option value="year" selected="selected">This Year</option>
+            </select>
+                </div>
+                <div class="panel-body">
+                    <div id="ContainerCategory" style="min-width: 100%; height: 243px; margin: 0 auto"></div>
+                </div>
+            </div>
+
+              <div class="panel panel-success">
+                <div class="panel-heading" style="text-align: right; padding:5px 15px;">
+                    Select a range: &nbsp;
+            <select id="range4" onchange="GetSalesGrowth(this.value)" style="border: 1px solid #aaa; margin: 2px 3px 0 0; -webkit-border-radius: 2px; cursor: pointer; width: 100px;" class="tftype2">
+                <option value="month">This Month</option>
+                <option value="year" selected="selected">This Year</option>
+            </select>
+                </div>
+                <div class="panel-body">
+                    <div id="ContainerSalesGrowth" style="min-width: 100%; height: 225px; margin: 0 auto"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="panel panel-success">
+                <div class="panel-heading" style="text-align: right; padding:5px 15px;">
+                    Select a range: &nbsp;
+            <select id="range4" onchange="GetSalesGrowth(this.value)" style="border: 1px solid #aaa; margin: 2px 3px 0 0; -webkit-border-radius: 2px; cursor: pointer; width: 100px;" class="tftype2">
+                <option value="month">This Month</option>
+                <option value="year" selected="selected">This Year</option>
+            </select>
+                </div>
+                <div class="panel-body">
+                    <div id="ContainerSalesGrowth" style="min-width: 100%; height: 242px; margin: 0 auto"></div>
+                </div>
+            </div>
+
+             <div class="panel panel-success">
+                <div class="panel-heading" style="text-align: right; padding:5px 15px;">
+                    Select a range: &nbsp;
+            <select id="range4" onchange="GetSalesGrowth(this.value)" style="border: 1px solid #aaa; margin: 2px 3px 0 0; -webkit-border-radius: 2px; cursor: pointer; width: 100px;" class="tftype2">
+                <option value="month">This Month</option>
+                <option value="year" selected="selected">This Year</option>
+            </select>
+                </div>
+                <div class="panel-body">
+                    <div id="ContainerSalesGrowth" style="min-width: 100%; height: 225px; margin: 0 auto"></div>
+                </div>
+            </div>
+        </div>
+       
+        <div class="col-md-3">
+            
+         
                 <div class="panel panel-success">
                     <div class="panel-heading">
                         <div class="row">
@@ -164,9 +221,8 @@
                         </div>
                     </a>
                 </div>
-            </div>
+           
 
-            <div class="col-lg-3 col-md-6 col-xs-12">
                 <div class="panel panel-info">
                     <div class="panel-heading">
                         <div class="row">
@@ -190,10 +246,7 @@
                         </div>
                     </a>
                 </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-xs-12">
-                <div class="panel panel-success">
+               <div class="panel panel-success">
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-3">
@@ -216,9 +269,30 @@
                         </div>
                     </a>
                 </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-xs-12">
+            
+             <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                 <i class="fa fa-archive fa-3x" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge" id="Div1" runat="server"><b>Step
+                                    <asp:Label ID="Label1" runat="server"></asp:Label><asp:Label ID="Label2" Style="font-size: 11px" runat="server"></asp:Label></b></div>
+                                <div>
+                                    Items out of stock
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="Wholesaler/Vieworders.aspx">
+                        <div class="panel-footer" style="background-color: #c3dbe7; border-top: 1px solid #c3dbe7;">
+                            <span class="pull-left">View Details</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
                 <div class="panel panel-danger">
                     <div class="panel-heading">
                         <div class="row">
@@ -241,49 +315,17 @@
                         </div>
                     </a>
                 </div>
-            </div>
+           
 
         </div>
-
-
-
-
-    <div class="col-md-12">
-        <div class="col-md-6">
-            <div class="panel panel-success" style="margin-top: 20px;">
-                <div class="panel-heading" style="text-align: right; padding:5px 15px;">
-                    Select a range: &nbsp;
-            <select id="range4" onchange="GetSalesGrowth(this.value)" style="border: 1px solid #aaa; margin: 2px 3px 0 0; -webkit-border-radius: 2px; cursor: pointer; width: 100px;" class="tftype2">
-                <option value="month">This Month</option>
-                <option value="year" selected="selected">This Year</option>
-            </select>
-                </div>
-                <div class="panel-body">
-                    <div id="ContainerSalesGrowth" style="min-width: 100%; height: 300px; margin: 0 auto"></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="panel panel-success" style="margin-top: 20px;">
-                <div class="panel-heading" style="text-align: right; padding:5px 15px;">
-                    Select a range: &nbsp;
-    <select id="range2" onchange="getChartDataBuyer(this.value)" style="border: 1px solid #aaa; margin: 2px 3px 0 0; -webkit-border-radius: 2px; cursor: pointer; width: 100px;" class="tftype2">
-        <option value="month" selected="selected">This Month</option>
-        <option value="year">This Year</option>
-
-    </select>
-                </div>
-                <div class="panel-body">
-                    <div id="ContainerTopBuyers" style="min-width: 100%; height: 300px; margin: 0 auto"></div>
-                </div>
-            </div>
         </div>
 
+   
     </div>
 
-
+     <div class="row" >
     <div class="col-md-12">
-        <div class="col-md-6">
+       
             <div class="panel panel-info" style="margin-top: 20px;">
                 <div class="panel-heading" style="text-align: right; padding:5px 15px;">
                     Select a range: &nbsp;
@@ -297,395 +339,110 @@
                     <div id="ContainerTopRegistration" style="min-width: 100%; height: 300px; margin: 0 auto"></div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6">
-            <div class="panel panel-info" style="margin-top: 20px;">
-                <div class="panel-heading" style="text-align: right; padding:5px 15px;">
-                    Select a range: &nbsp;
-    <select id="range" onchange="getChartDataProduct(this.value)" style="border: 1px solid #aaa; margin: 2px 3px 0 0; -webkit-border-radius: 2px; cursor: pointer; width: 100px;" class="tftype2">
-        <option value="month" selected="selected">This Month</option>
-        <option value="year">This Year</option>
-
-    </select>
-                </div>
-                <div class="panel-body">
-                    <div id="ContainerTopPr" style="min-width: 100%; height: 300px; margin: 0 auto"></div>
-                </div>
-            </div>
-        </div>
+        
+      
+         
+       
 
     </div>
 
 </div>
  <script>
         $(function () {
-            getChartDataProduct("month");
-            getChartDataBuyer("month");
-            getChartDataRegistration("year");
-            GetSalesGrowth("year");
-        })
-    </script>
-    <script>
-       function getChartDataProduct(range) {
-               
-                  $.ajax(
-                  {
-                      type: "POST",
-                      url: "<%: ResolveUrl("~/ProcuriService.asmx/GetTopSellingProduct") %>",
+            //getChartDataProduct("month");
+            //getChartDataBuyer("month");
+            //getChartDataRegistration("year");
+            GetICategogry("year");
+     })
 
-                      data: JSON.stringify({ duration: range }),
-                        contentType: "application/json; charset=utf-8",
-                        async: true,
-                        cache: false,
-                        success: function (response) {
-                         
-                            if (response.d.Error != null && response.d.Error != "" && response.d.Error !== "undefined") {
-
-                                return;
-                            }
-
-                            renderChartDataProduct(response);
-
-                        }
-                    });
-              
-              }
-
-        function renderChartDataProduct(response) {
-            var productList = response.d.TopProduct;
-           
-          
-
-            var options = {
-                chart: {
-                    type: 'column',
-                   
-                    renderTo: 'ContainerTopPr'
-                },
-                title: {
-                    text: 'Top Selling Products'
-                },
-                subtitle: {
-                    text: ''
-                },
-                xAxis: {
-                    categories: [],
-                    crosshair: true
-                },
-                yAxis: {
-                    min: 0,
-                    title: {
-                        text: 'Quantity'
-                    }
-                },
-                tooltip: {
-                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                        '<td style="padding:0"><b>{point.y} </b></td></tr>',
-                    footerFormat: '</table>',
-                    shared: true,
-                    useHTML: true
-                },
-                plotOptions: {
-                    column: {
-                        pointPadding: 0.2,
-                        borderWidth: 0
-                    }
-                },
-                series: [{
-                    name: 'Top Selling Products',
-                    data: [],
-                    color: 'rgb(94, 175, 153)'
-                    
-
-                }]
-            };
-
-            for (var i = 0; i < productList.length; i++) {
-
-                options.xAxis.categories.push(productList[i].name);
-               
-            }
-            for (var j = 0; j < productList.length; j++) {
-                options.series[0].data.push(productList[j].z);
-            }
-            
-            var chart = new Highcharts.Chart(options);
-          
-                }
-      
-
-
-         function getChartDataBuyer(range) {
-               
-                  $.ajax(
-                  {
-                      type: "POST",
-                      url: "<%: ResolveUrl("~/ProcuriService.asmx/GetTopBuyers") %>",
-
-                      data: JSON.stringify({ duration: range }),
-                        contentType: "application/json; charset=utf-8",
-                        async: true,
-                        cache: false,
-                        success: function (response) {
-                         
-                            if (response.d.Error != null && response.d.Error != "" && response.d.Error !== "undefined") {
-
-                                return;
-                            }
-
-                            renderChartDataBuyers(response);
-
-                        }
-                    });
-              
-              }
-
-        function renderChartDataBuyers(response) {
-            var customers = response.d.TopBuyers;
-           
-          
-
-            var options = {
-                chart: {
-                    type: 'column',
-                   
-                    renderTo: 'ContainerTopBuyers'
-                },
-                title: {
-                    text: 'Top Buyers'
-                },
-                subtitle: {
-                    text: ''
-                },
-                xAxis: {
-                    categories: [],
-                    crosshair: true
-                },
-                yAxis: {
-                    min: 0,
-                    title: {
-                        text: 'Quantity'
-                    }
-                },
-                tooltip: {
-                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                        '<td style="padding:0"><b>{point.y} </b></td></tr>',
-                    footerFormat: '</table>',
-                    shared: true,
-                    useHTML: true
-                },
-                plotOptions: {
-                    column: {
-                        pointPadding: 0.2,
-                        borderWidth: 0
-                    }
-                },
-                series: [{
-                    name: 'Customer',
-                    data: [],
-                    color: 'rgb(94, 175, 153)'
-                    
-
-                }]
-            };
-
-            for (var i = 0; i < customers.length; i++) {
-
-                options.xAxis.categories.push(customers[i].name);
-               
-            }
-            for (var j = 0; j < customers.length; j++) {
-                options.series[0].data.push(customers[j].z);
-            }
-            
-            var chart = new Highcharts.Chart(options);
-          
-           }
-        
-    </script>
-
-    <script>
-
-        function GetSalesGrowth(range) {
-               
-                  $.ajax(
-                  {
-                      type: "POST",
-                      url: "<%: ResolveUrl("~/ProcuriService.asmx/GetSalesGrowth") %>",
-
-                      data: JSON.stringify({ duration: range }),
-                        contentType: "application/json; charset=utf-8",
-                        async: true,
-                        cache: false,
-                        success: function (response) {
-                         
-                            if (response.d.Error != null && response.d.Error != "" && response.d.Error !== "undefined") {
-
-                                return;
-                            }
-
-                            renderChartDataSales(response);
-
-                        }
-                    });
-              
-              }
-        var interval;
-          function renderChartDataSales(response) {
-              var yAxisData = eval(response.d.recy);
-              var xAxisData = eval(response.d.recx);
-
-              if (interval == 4) {
-                  if (xAxisData.length < 10) {
-                      interval = 0;
+        function GetICategogry(type)
+        {
+            $.ajax(
+              {
+                  type: "POST",
+                  url: "<%: ResolveUrl("~/OfficeInventWebservice.asmx/StockByCategoryPie") %>",
+                  data: JSON.stringify({ type: type }),
+                  contentType: "application/json; charset=utf-8",
+                  async: true,
+                  cache: true,
+                  success: function (responsech) {
+                      rendercdPieChart(responsech);
                   }
-              }
-                
-              var options = {
-                  chart: {
-                      renderTo: 'ContainerSalesGrowth',
-                      defaultSeriesType: 'line',
-                      marginRight: 0,
-                      marginBottom: 95
-                  },
-                  title: {
-                      text: 'Sales Growth',
-                      x: -20 //center
-                  },
+              });
+        }
 
-                  xAxis: {
-                      categories: xAxisData,
-                      tickInterval: interval,
-                  },
-                  yAxis: {
-                      min: 0,
-                      title: {
-                          text: 'Quantity of Sales'
-                      },
-                      allowDecimals: false,
-
-                  },
-                  noData: {
-                      position: {
-                          align: 'center',
-                          verticalAlign: 'middle'
-                      }
-                  },
-
-                  plotOptions: {
-                      column: {
-                          pointPadding: 0.2,
-                          borderWidth: 0
-                      }
-                  },
-                  series: [{
-                      name: 'Sales',
-                      data: yAxisData
-                  }],
-                  tooltip: {
-                      formatter: function () {
-                          return '<b>' + this.series.name + '</b><br/>' +
-                              this.x + ': ' + this.y + ' Sales';
-                      }
-                  },
-              };
-                  
-              
-            var chart = new Highcharts.Chart(options);
-          
-           }
-        function getChartDataRegistration(range) {
-               
-                  $.ajax(
-                  {
-                      type: "POST",
-                      url: "<%: ResolveUrl("~/ProcuriService.asmx/GetCustomersRegistration") %>",
-
-                      data: JSON.stringify({ duration: range }),
-                        contentType: "application/json; charset=utf-8",
-                        async: true,
-                        cache: false,
-                        success: function (response) {
-                         
-                            if (response.d.Error != null && response.d.Error != "" && response.d.Error !== "undefined") {
-
-                                return;
-                            }
-
-                            renderChartDataReg(response);
-
-                        }
-                    });
-              
-              }
-      
-          function renderChartDataReg(response) {
-              var yAxisData = eval(response.d.recy);
-              var xAxisData = eval(response.d.recx);
-
-              if (interval == 4) {
-                  if (xAxisData.length < 10) {
-                      interval = 0;
+          function rendercdPieChart(responsech) {
+              var serObj = responsech.d.catJson;
+              $(function () {
+                  if (!Highcharts.charts.length) {
+                      Highcharts.getOptions().colors = Highcharts.map(Highcharts.getOptions().colors, function (color) {
+                          return {
+                              radialGradient: {
+                                  cx: 0.5,
+                                  cy: 0.3,
+                                  r: 0.7
+                              },
+                              stops: [
+                                  [0, color],
+                                  [1, Highcharts.Color(color).brighten(-0.3).get('rgb')] // darken
+                              ]
+                          };
+                      });
                   }
-              }
-                
-              var options = {
-                  chart: {
-                      renderTo: 'ContainerTopRegistration',
-                      defaultSeriesType: 'line',
-                      marginRight: 0,
-                      marginBottom: 95
-                  },
-                  title: {
-                      text: 'Customers Registration',
-                      x: -20 //center
-                  },
-
-                  xAxis: {
-                      categories: xAxisData,
-                      tickInterval: interval,
-                  },
-                  yAxis: {
-                      min: 0,
-                      title: {
-                          text: 'No of Customers'
+                  var options = {
+                      chart: {
+                          renderTo: 'ContainerCategory',
+                          plotBackgroundColor: null,
+                          plotBorderWidth: null,
+                          plotShadow: false,
+                          type: 'pie'
                       },
-                      allowDecimals: false,
+                     
+                      title: {
+                          text: 'Stock by Category'
+                      },
+                      tooltip: {
+                          pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                      },
+                      plotOptions: {
+                          pie: {
+                              allowPointSelect: true,
+                              cursor: 'pointer',
+                              dataLabels: {
+                                  enabled: false,
 
-                  },
-                  noData: {
-                      position: {
-                          align: 'center',
-                          verticalAlign: 'middle'
-                      }
-                  },
 
-                  plotOptions: {
-                      column: {
-                          pointPadding: 0.2,
-                          borderWidth: 0
-                      }
-                  },
-                  series: [{
-                      name: 'Customers',
-                      data: yAxisData
-                  }],
-                  tooltip: {
-                      formatter: function () {
-                          return '<b>' + this.series.name + '</b><br/>' +
-                              this.x + ': ' + this.y + ' Customer';
-                      }
-                  },
-              };
-                  
-              
-            var chart = new Highcharts.Chart(options);
-          
-           }
-        
+                              },
+                              showInLegend: true
+                          }
+                      },
+                      series: [{
+                          type: 'pie',
+                          name: 'Category',
+                          data: []
+                      }]
+
+                  };
+
+
+                  var obj = jQuery.parseJSON(serObj);
+
+                  $.each(obj, function (index, value) {
+                      var data = {};
+                      data.name = value["name"].toString()+" ("+value["x"].toString()+")";
+                      data.y = parseFloat(value["x"].toString());
+                      
+                      
+                      options.series[0].data.push(data);
+                  });
+                  var chart = new Highcharts.Chart(options);
+
+              }
+            );
+          }
+
     </script>
+    
        
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="scriptsContentPlaceHolder" runat="server">

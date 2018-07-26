@@ -173,13 +173,14 @@ a {
     border-collapse: collapse;
 }
 .img-avatar {
-    width: 150px;
-    height: 150px;
+    width: 30px;
+    height: 30px;
     display: block;
     border-radius: 50%;
     background-repeat:no-repeat;
     background-size: cover;
     background-position: center;
+    margin-top:5px;
 }
 .profile .profile-avatar {
     text-align: center;
